@@ -34,4 +34,8 @@ Si está utilizando `docker-compose`, simplemente navegue al directorio donde se
 
 ```bash
 docker-compose up
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> 3e59b8d473a00ed0f3c21d8f2cce95c0403d1083
