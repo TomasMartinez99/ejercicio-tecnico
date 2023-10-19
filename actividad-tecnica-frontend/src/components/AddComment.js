@@ -10,10 +10,11 @@ function AddComment({ onCommentAdded }) {
 
         try {
             const response = await axios.post('http://localhost:3001/comentarios', { usuario, contenido });
-            if (response.data && response.data.id) {
-                onCommentAdded(response.data);
+
+            if (response.data ) {
                 setUsuario(''); // Limpiar el campo usuario después de enviar
                 setContenido(''); // Limpiar el campo contenido después de enviar
+                window.location.reload();
             }
         } catch (error) {
             console.error("Error adding comment:", error);
