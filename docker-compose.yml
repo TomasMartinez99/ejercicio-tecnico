@@ -1,13 +1,22 @@
 version: '3'
 
 services:
+
   backend:
-    build: ./actividad-tecnica-php  # path to the directory containing the Dockerfile
-    command: node server.js 
+    build: 
+      context: ./actividad-tecnica-php
+      dockerfile: Dockerfile
     ports:
-      - "3002:3002"
+      - "3002:80"
     depends_on:
       - db
+    environment:
+      DB_CONNECTION: mysql
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: comentarios_db
+      DB_USERNAME: root
+      DB_PASSWORD: 1234
 
   frontend:
     build: ./actividad-tecnica-frontend
