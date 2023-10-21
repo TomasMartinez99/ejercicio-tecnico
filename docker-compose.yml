@@ -3,8 +3,9 @@ version: '3'
 services:
   backend:
     build: ./actividad-tecnica-php  # path to the directory containing the Dockerfile
+    command: node server.js 
     ports:
-      - "3001:3001"
+      - "3002:3002"
     depends_on:
       - db
 
